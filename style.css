@@ -16,16 +16,25 @@ body {
 }
 
 .text-container {
-  margin-bottom: 30px;
+  margin-bottom: 80px;
 }
 
 h1 {
   font-weight: normal;
   font-family: 'VT323', monospace;
-  font-size: 24px;
+  font-size: 20px;
   color: #744f52;
   z-index: 10; /* just in case */
   justify-content: flex-start;
+}
+
+.note a {
+  font-weight: normal;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  color: #744f527e;
+  justify-content: flex-start;
+  text-decoration: none;   
 }
 
 .card-container {
