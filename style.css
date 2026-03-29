@@ -1,0 +1,141 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fff7fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: center;
+  margin-top: 20px; /* space from top */
+}
+
+.text-container {
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-weight: normal;
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  color: #744f52;
+  z-index: 10; /* just in case */
+}
+
+.card-container {
+  position: relative;
+  width: 160px;
+  height: 240px;
+  cursor: pointer;
+}
+
+.card {
+  position: absolute;
+  width: 120px;
+  height: 180px;
+  perspective: 1000px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+  font-weight: 500;
+  color: #fcf7df;
+  box-shadow: 0 8px 20px rgba(64, 75, 0, 0.1);
+  cursor: pointer;
+  position: absolute;
+  transition: transform 0.5s cubic-bezier(0.25, 1.5, 0.5, 1);
+  /* transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); */
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  font-weight: bold;
+}
+
+/* FRONT COLORS */
+/* .red { background: #ffc1cc; }
+.orange { background: #ffd8b1; }
+.blue { background: #cde7ff; }
+.green { background: #d4f8d4; } */
+
+.red { background-image: url("assets/twenty.jpg"); }
+.orange { background-image: url("assets/fifty.jpg"); }
+.blue { background-image: url("assets/one-hundred.jpg"); }
+.green { background-image: url("assets/double.jpg"); }
+
+.red, .orange, .blue, .green { background-size: cover; }
+
+/* BACK (yellow pastel) */
+.back {
+  background-image: url("assets/back.jpg");
+  background-size: cover;
+  /* background: #fff3b0; */
+  transform: rotateY(180deg);
+}
+
+/* stacked effect */
+.card:nth-child(1) { transform: translateY(0px); z-index: 4; }
+.card:nth-child(2) { transform: translateY(5px); z-index: 3; }
+.card:nth-child(3) { transform: translateY(10px); z-index: 2; }
+.card:nth-child(4) { transform: translateY(15px); z-index: 1; }
+
+.card.revealed {
+  transform: scale(1.1) !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* BUTTON */
+.controls {
+  margin: 20px 0;
+}
+
+#resetBtn {
+  background-color: #E8CFA6; /* pastel pink */
+  color:  #fff7fb;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: 3px solid #C6996F; /* slightly darker pastel border */
+  border-radius: 5px; /* blocky edges for pixel vibe */
+  cursor: pointer;
+  text-transform: lowercase;
+  box-shadow: 4px 4px 0 #886255; /* soft pastel shadow */
+  transition: all 0.1s;
+}
+
+#resetBtn:hover {
+  background-color: #C3D56F; /* slightly brighter pastel on hover */
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 0 #886255;
+}
+
+#resetBtn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 #886255;
+}
