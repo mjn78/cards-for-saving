@@ -46,10 +46,10 @@ function dealCards() {
     arr.forEach(card => container.appendChild(card));
 
     const positions = [
-      { x: -70, y: -70 },
-      { x: 70, y: -70 },
-      { x: -70, y: 70 },
-      { x: 70, y: 70 }
+      { x: -80, y: -80 },
+      { x: 80, y: -80 },
+      { x: -80, y: 80 },
+      { x: 80, y: 80 }
     ];
 
     arr.forEach((card, i) => {
