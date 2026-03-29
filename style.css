@@ -25,6 +25,7 @@ h1 {
   font-size: 24px;
   color: #744f52;
   z-index: 10; /* just in case */
+  justify-content: flex-start;
 }
 
 .card-container {
@@ -52,6 +53,8 @@ h1 {
   position: absolute;
   transition: transform 0.5s cubic-bezier(0.25, 1.5, 0.5, 1);
   /* transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); */
+  left: 13%;
+  transform: translateX(-50%);
 }
 
 .inner {
@@ -100,10 +103,15 @@ h1 {
 }
 
 /* stacked effect */
-.card:nth-child(1) { transform: translateY(0px); z-index: 4; }
+/* .card:nth-child(1) { transform: translateY(0px); z-index: 4; }
 .card:nth-child(2) { transform: translateY(5px); z-index: 3; }
 .card:nth-child(3) { transform: translateY(10px); z-index: 2; }
-.card:nth-child(4) { transform: translateY(15px); z-index: 1; }
+.card:nth-child(4) { transform: translateY(15px); z-index: 1; } */
+
+.card:nth-child(1) { transform: translate(-50%, 0px); }
+.card:nth-child(2) { transform: translate(-50%, 5px); }
+.card:nth-child(3) { transform: translate(-50%, 10px); }
+.card:nth-child(4) { transform: translate(-50%, 15px); }
 
 .card.revealed {
   transform: scale(1.1) !important;
@@ -127,6 +135,7 @@ h1 {
   text-transform: lowercase;
   box-shadow: 4px 4px 0 #886255; /* soft pastel shadow */
   transition: all 0.1s;
+  margin-top: 30px;
 }
 
 #resetBtn:hover {
